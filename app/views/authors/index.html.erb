@@ -1,0 +1,19 @@
+<h1>All of the Authors</h1>
+
+<%= link_to 'Create new author', new_author_path %>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Date of birth</th>
+        <th>Books Published</th>
+    </tr>
+
+    <% @authors.each do |author| %>
+        <tr>
+            <td><%= link_to author.name, author_path(author) %></td>
+            <td><%= author.dob %></td>
+            <td><%= author.books_published %></td>
+        </tr>
+    <% end %>
+</table>
